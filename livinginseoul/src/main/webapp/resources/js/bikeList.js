@@ -18,7 +18,12 @@ $(function(){
 	    map: map,
 	}*/
 	
-	var greenMarker = new naver.maps.Marker({
+	var maker = new naver.maps.Marker({
+        map: map,
+        position: position
+    });
+	
+	/*var greenMarker = new naver.maps.Marker({
 	    position: position,
         map: map,
         title: 'Green Marker',
@@ -37,7 +42,7 @@ $(function(){
             anchor: new naver.maps.Point(19, 58),
         },
         draggable: true
-    });
+    });*/
 	
 
 	//비동기 방식으로 출력할 맵을 생성하는 함수
@@ -49,12 +54,12 @@ $(function(){
 	}
 	
 	//맵에 좌표로 마커찍어주는 함수
-	/*function addMaker(stationLatitude, stationLongitude){
+	function addMaker(stationLatitude, stationLongitude){
 		
 		marker = new naver.maps.Marker({
 			position: new naver.maps.LatLng(stationLatitude, stationLongitude),
 			map: map,
-			icon: {
+			/*icon: {
 				path: [
         			new naver.maps.Point(0, 70), new naver.maps.Point(20, 100), new naver.maps.Point(40, 70),
         			new naver.maps.Point(30, 70), new naver.maps.Point(70, 0), new naver.maps.Point(10, 70)
@@ -73,10 +78,10 @@ $(function(){
 		        size: new naver.maps.Size(193, 128),
 		        origin: new naver.maps.Point(0, 0),
 		        anchor: new naver.maps.Point(62, 120)
-		    }
+		    }*/
 		});
 			
-	}*/
+	}
 	
 	//검색 클릭시 ajax비동기 방식 호출
 	$('#serch_station').click(()=>{
@@ -92,9 +97,9 @@ $(function(){
 					
 					//맵의 센터위치 변경
 					initMap(json[0].stationLatitude, json[0].stationLongitude);
-					/*for(var i=0;i<json.length;i++){
+					for(var i=0;i<json.length;i++){
 						addMaker(json[i].stationLatitude, json[i].stationLongitude);
-					}*/
+					}
 					
 				},
 				error : console.error
