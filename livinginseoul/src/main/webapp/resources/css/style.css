@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+#stationNav{
+	display: flex;
+	align-content: center;
+	justify-content: space-around;
+}
+
+#map{
+	width: 90%;
+	height: 400px;
+}
+
